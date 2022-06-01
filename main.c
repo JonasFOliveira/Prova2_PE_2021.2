@@ -2,8 +2,8 @@
 #include "acess.h"
 #include <stdio.h>
 
-
 void printar_data(Matrix matrix);
+
 
 int main(){
     int data[6] = {1,2,3,4,5,6};
