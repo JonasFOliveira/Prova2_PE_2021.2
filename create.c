@@ -3,7 +3,7 @@
 #include "create.h"
 
 /*
-    function that will create a matrix[n_rows * n_cols]
+    function that will create a matrix [n_rows * n_cols]
     > int *data : an interger array that will be a matrix
     > int n_rows : an interger number of quantity rows the matrix has
     > int n_cols : an interger number of quantity columns the matrix has
