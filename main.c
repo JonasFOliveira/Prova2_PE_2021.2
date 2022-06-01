@@ -1,5 +1,8 @@
 #include "create.h"
 
+void printar_data(Matrix matrix);
+
+
 int main(){
     int data[6] = {1,2,3,4,5,6};
     Matrix a = create_matrix(data, 2, 3);
@@ -14,4 +17,11 @@ int main(){
     printar_data(i);
     printar_data(tile);
     return 0;
+}
+
+void printar_data(Matrix matrix){
+    for (int i = 0; i < matrix.n_cols*matrix.n_rows; i++){
+        printf("%d ", matrix.data[i]);
+    }
+    puts("");
 }
