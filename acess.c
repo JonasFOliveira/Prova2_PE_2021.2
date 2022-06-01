@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "acess.h"
+#include "header.h"
+
+
 
 /*
     function to access element of an matrix
@@ -10,11 +12,36 @@
     get_element returns an element of the array according to its position.
 */
 int get_element(Matrix matrix, int ri, int ci){
-    for(int i = 0; i < ri; i++) {
-      for(int j = 0; j < ci; j++) {
-          pf("%d", matrix[i][j]);
-          pf("%d", *(*(matrix + i) + j));
+    return matrix.data[ri*matrix.stride_rows +ci*matrix.stride_cols];
+}
+
+void put_element(Matrix matrix, int ri, int ci, int elem){
+    matrix.data[ri*matrix.stride_rows +ci*matrix.stride_cols] = elem;
+}
+
+void print_matrix(Matrix matrix){
+    int a = 0;
+    printf("{");
+    for (int i = 0; i < matrix.n_rows; i++){
+        if(i == 0)
+         printf(" ");
+
+        if(i > 0)
+            printf("  ");
+        printf(" {");
+        
+        for (int j = 0; j < matrix.n_cols; j++){
+            if (j < matrix.n_cols-1)
+                printf("%d, ", matrix.data[a++]);
+            else
+                printf("%d", matrix.data[a++]);
         }
-        pf("/n");
+        if (i < matrix.n_rows-1)
+            printf("},");
+        else
+            printf("} ");
+        if (i < matrix.n_cols-1)
+            puts("");
     }
+    printf("}\n");
 }
