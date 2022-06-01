@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "create.h"
+#include "header.h"
 
 /*
     function that will create a matrix[n_rows * n_cols]
