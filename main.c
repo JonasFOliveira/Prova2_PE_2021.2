@@ -1,4 +1,6 @@
 #include "create.h"
+#include "acess.h"
+#include <stdio.h>
 
 void printar_data(Matrix matrix);
 
@@ -16,6 +18,16 @@ int main(){
     printar_data(full);
     printar_data(i);
     printar_data(tile);
+
+    int b[9] = {1,2,3,4,5,6,7,8,9};
+    Matrix df = create_matrix(b, 3, 3);
+    printf("%d\n", get_element(df, 2, 2));
+
+    put_element(df, 2, 2, 10);
+    printf("%d\n", get_element(df, 2, 2));
+
+    print_matrix(df);
+
     return 0;
 }
 

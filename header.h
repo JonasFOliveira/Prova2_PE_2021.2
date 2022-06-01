@@ -1,6 +1,5 @@
-#ifndef CREATE_H
-#define CREATE_C
-
+#ifndef HEADER_H
+#define HEADER_H
 
 typedef struct {
    int *data;
@@ -11,12 +10,18 @@ typedef struct {
    int offset; 
 } Matrix;
 
+//======== Functions for create matrices ========
+
 Matrix create_matrix(int *data, int n_rows, int n_cols);
 Matrix zeros_matrix(int n_rows, int n_cols);
 Matrix full_matrix(int n_rows, int n_cols, int values);
 Matrix i_matrix(int n);
 Matrix tile_matrix(Matrix matrix, int reps);
+
+//======== Functions for acess matrices ========
 int get_element(Matrix matrix, int ri, int ci);
+void put_element(Matrix matrix, int ri, int ci, int elem);
+void print_matrix(Matrix matrix);
 
 
 #endif
