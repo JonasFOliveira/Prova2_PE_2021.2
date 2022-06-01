@@ -1,5 +1,5 @@
 #include "create.h"
-
+#include <stdio.h>
 
 void printar_data(Matrix matrix);
 
