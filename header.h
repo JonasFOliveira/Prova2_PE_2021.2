@@ -25,9 +25,16 @@ void put_element(Matrix matrix, int ri, int ci, int elem);
 void print_matrix(Matrix matrix);
 
 //======== Functions for manipulating dimensions ========
-/*Aaaaa*/
+
 Matrix transpose(Matrix matrix);
 Matrix reshape(Matrix matrix, int new_n_rows, int new_n_cols);
 Matrix slice(Matrix a_matrix, int rs, int re, int cs, int ce);
+
+//======== Functions for aggregation ========
+
+int min(Matrix matrix);
+int max(Matrix matrix);
+int argmin(Matrix matrix);
+int argmax(Matrix matrix);
 
 #endif
