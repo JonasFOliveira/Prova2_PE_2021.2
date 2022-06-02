@@ -45,6 +45,12 @@ int main(){
     printf("%d\n", max(df));
     printf("%d\n", argmin(df));
     printf("%d\n", argmax(df));
+
+    print_matrix(add(df, df));
+    print_matrix(sub(df, df));
+    print_matrix(division(df, df));
+    print_matrix(mul(df, df));
+
     return 0;
 }
 
