@@ -36,8 +36,15 @@ int main(){
     print_matrix(df);
     Matrix sliced = slice(df, 0, 2, 1, 3);
     print_matrix(sliced);
+
+    put_element(df, 1, 1, 10);
     print_matrix(df);
 
+    
+    printf("%d\n", min(df));
+    printf("%d\n", max(df));
+    printf("%d\n", argmin(df));
+    printf("%d\n", argmax(df));
     return 0;
 }
 
