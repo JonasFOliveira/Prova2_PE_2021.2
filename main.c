@@ -1,5 +1,4 @@
-#include "create.h"
-#include "acess.h"
+#include "header.h"
 #include <stdio.h>
 
 void printar_data(Matrix matrix);
@@ -28,6 +27,21 @@ int main(){
 
     print_matrix(df);
 
+    Matrix t = transpose(df);
+    print_matrix(t);
+
+    print_matrix(a);
+    print_matrix(reshape(a, 3, 2));
+    print_matrix(reshape(a, 4, 2));
+    print_matrix(df);
+    print_matrix(slice(df, 0, 2, 1, 3));
+    print_matrix(df);
+
+    int baba[4] = {1, 2, 3, 4};
+    int rows = 2-0;
+    int cols = 3-1;
+    Matrix out = create_matrix(baba, rows, cols);
+    print_matrix(out);
     return 0;
 }
 

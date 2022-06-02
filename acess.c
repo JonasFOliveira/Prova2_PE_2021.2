@@ -53,8 +53,8 @@ void print_matrix(Matrix matrix){
             printf("},");
         else
             printf("} ");
-        if (i < matrix.n_cols-1)
+        if (i < matrix.n_cols)
             puts("");
     }
-    printf("}\n");
+    printf("}\n\n");
 }
