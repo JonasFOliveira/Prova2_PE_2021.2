@@ -19,9 +19,15 @@ Matrix i_matrix(int n);
 Matrix tile_matrix(Matrix matrix, int reps);
 
 //======== Functions for acess matrices ========
+
 int get_element(Matrix matrix, int ri, int ci);
 void put_element(Matrix matrix, int ri, int ci, int elem);
 void print_matrix(Matrix matrix);
 
+//======== Functions for manipulating dimensions ========
+/*Aaaaa*/
+Matrix transpose(Matrix matrix);
+Matrix reshape(Matrix matrix, int new_n_rows, int new_n_cols);
+Matrix slice(Matrix a_matrix, int rs, int re, int cs, int ce);
 
 #endif

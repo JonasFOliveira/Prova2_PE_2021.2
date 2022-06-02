@@ -34,7 +34,9 @@ Matrix zeros_matrix(int n_rows, int n_cols){
         data[i] = 0;
     }
     
-    return create_matrix(data, n_rows, n_cols); 
+    Matrix out = create_matrix(data, n_rows, n_cols); 
+    free(data);
+    return out;
 }
 
 /*
@@ -50,7 +52,9 @@ Matrix full_matrix(int n_rows, int n_cols, int values){
     for(int i = 0; i < (n_rows*n_cols); i++){
         data[i] = values;
     }
-    return create_matrix(data, n_rows, n_cols);
+    Matrix out = create_matrix(data, n_rows, n_cols);
+    free(data);
+    return out;
 }
 
 /*
@@ -70,7 +74,10 @@ Matrix i_matrix(int n){
                 data[a++] = 0;
         }
     }
-    return create_matrix(data, n, n);
+
+    Matrix out = create_matrix(data, n, n);
+    free(data);
+    return out;
 
 }
 
@@ -91,5 +98,7 @@ Matrix tile_matrix(Matrix matrix, int reps){
         }
     }
 
-    return create_matrix(data, reps, matrix.n_cols*matrix.n_rows);
+    Matrix out = create_matrix(data, reps, matrix.n_cols*matrix.n_rows);
+    free(data);
+    return out;
 }
