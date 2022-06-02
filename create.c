@@ -16,7 +16,7 @@ Matrix create_matrix(int *data, int n_rows, int n_cols){
     df.n_rows = n_rows;
     df.n_cols = n_cols;
     df.stride_rows = n_cols; //stride_rows is a quantity of moves is necessary to 'jump' for other row
-    df.stride_cols = 1; //stride_row is a quantity of move is necessary to jump for other columns
+    df.stride_cols = 1; //stride_cols is a quantity of move is necessary to jump for other columns
     df.offset = 0; //offset is a location of the first element on array
     return df;
 }
@@ -35,7 +35,6 @@ Matrix zeros_matrix(int n_rows, int n_cols){
     }
     
     Matrix out = create_matrix(data, n_rows, n_cols); 
-    free(data);
     return out;
 }
 
@@ -53,7 +52,6 @@ Matrix full_matrix(int n_rows, int n_cols, int values){
         data[i] = values;
     }
     Matrix out = create_matrix(data, n_rows, n_cols);
-    free(data);
     return out;
 }
 
@@ -76,7 +74,6 @@ Matrix i_matrix(int n){
     }
 
     Matrix out = create_matrix(data, n, n);
-    free(data);
     return out;
 
 }
@@ -99,6 +96,5 @@ Matrix tile_matrix(Matrix matrix, int reps){
     }
 
     Matrix out = create_matrix(data, reps, matrix.n_cols*matrix.n_rows);
-    free(data);
     return out;
 }
