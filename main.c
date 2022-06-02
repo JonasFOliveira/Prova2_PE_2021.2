@@ -34,14 +34,10 @@ int main(){
     print_matrix(reshape(a, 3, 2));
     print_matrix(reshape(a, 4, 2));
     print_matrix(df);
-    print_matrix(slice(df, 0, 2, 1, 3));
+    Matrix sliced = slice(df, 0, 2, 1, 3);
+    print_matrix(sliced);
     print_matrix(df);
 
-    int baba[4] = {1, 2, 3, 4};
-    int rows = 2-0;
-    int cols = 3-1;
-    Matrix out = create_matrix(baba, rows, cols);
-    print_matrix(out);
     return 0;
 }
 

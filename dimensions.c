@@ -17,9 +17,9 @@ Matrix transpose(Matrix matrix){
     }while(i != matrix.n_cols*matrix.n_rows);
 
     Matrix out = create_matrix(df, matrix.n_cols, matrix.n_rows);
-    free(df);
     return out;
 }
+
 Matrix reshape(Matrix matrix, int new_n_rows, int new_n_cols){
 
     if(matrix.n_rows*matrix.n_cols == new_n_rows*new_n_cols)
@@ -34,34 +34,22 @@ Matrix slice(Matrix a_matrix, int rs, int re, int cs, int ce){
     int rows = re-rs;
     int cols = ce-cs;
     int *data = (int *) malloc(rows*cols*sizeof(int));
-    printf("entrei\n");
     int a = 0;
     int s = 0;
     for (int i = 0; i < a_matrix.n_rows; i++){
-        printf("primeiro for\n");
         for (int j = 0; j < a_matrix.n_cols; j++){
-            printf("segundo for\n");
             if (i >= rs && i < re && j >= cs && j < ce){
-                printf("entrei no if\n");
-                printf("1 a = %d, s = %d\n", a, s);
-                printf("data[s] = %d\n", a_matrix.data[s]);
                 data[a] = a_matrix.data[s];
                 a++;
                 s++;
-                printf("2 a = %d, s = %d\n", a, s);
             }
-            else{
+            else
                 s++;
-                printf("s = %d\n", s);
-            }
         }
     }
-    for (int i = 0; i < 4; i++)
-        printf("saida %d\n", data[i]);
-    int baba[4] = {0};
 
-    Matrix out = create_matrix(baba, 2, 2);
-    free(data);
+    Matrix out = create_matrix(data, 2, 2);
+    
     return out;
 }
  
