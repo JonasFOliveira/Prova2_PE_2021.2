@@ -88,13 +88,31 @@ Matrix tile_matrix(Matrix matrix, int reps){
     Matrix df;
     int *data = (int *) malloc(matrix.n_cols*matrix.n_rows*reps*sizeof(int));
     int a = 0;
-    for (int i = 0; i < reps; i++){ 
-        for (int j = matrix.offset; j < matrix.n_cols*matrix.n_rows; j++){
-            data[a] = matrix.data[j];
-            a++;
+    int l = 0;
+    for (int i = 0; i < matrix.n_rows; i++){
+        for (int j = 0; j < reps; j++){ 
+            for (int k = 0; k < matrix.n_cols; k++){
+                data[a++] = matrix.data[k+l];
+            }
         }
+        l = a/reps;
     }
-
-    Matrix out = create_matrix(data, reps, matrix.n_cols*matrix.n_rows);
+    Matrix out = create_matrix(data, matrix.n_rows, matrix.n_cols*reps);
     return out;
 }
+
+// 0 1 2 | 3 4 5 | 6 7 8
+// 1 2 3 | 4 5 6 | 7 8 9
+
+//   0 1 2 
+// 0 1 2 3
+// 1 4 5 6
+// 2 7 8 9
+
+//   0 1 2 3 4 5  
+// 0 1 2 3 1 2 3
+// 1 4 5 6 4 5 6
+// 2 7 8 9 7 8 9
+
+// 0 1 2 4 5 6 | 7 8 9 10 11 12 | 13 14 15 16 17 18
+// 1 2 3 1 2 3 | 4 5 6 4  5  6  | 7  8  9  7  8  9
