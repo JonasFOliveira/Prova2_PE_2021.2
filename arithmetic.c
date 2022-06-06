@@ -2,6 +2,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+
+/* 
+    add, sub, div and mul are the four arithmetic operations. 
+    These functions do element-by-element operations and return the array.
+*/
 Matrix add(Matrix matrix_1, Matrix matrix_2){
     if(matrix_1.n_cols == matrix_2.n_cols && matrix_1.n_rows == matrix_2.n_rows){
         int *data = (int *) malloc(matrix_1.n_cols*matrix_1.n_rows*sizeof(int));

@@ -2,6 +2,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+
+/*
+    function transpose returns the transposed matrix.
+    > int matrix : is ​​the matrix used to generate the transposed matrix
+*/
 Matrix transpose(Matrix matrix){
     int *df = (int *) malloc(matrix.n_rows*matrix.n_cols*sizeof(int));
     int i = 0, j = 0, init = 0;
@@ -20,6 +25,14 @@ Matrix transpose(Matrix matrix){
     return out;
 }
 
+/*
+    function reshape changes the dimensions of the array. But not all dimensions are
+    valid, as the number of elements must be consistent with the dimensions of the
+    array (number_of_elements = n_rows * n_cols).
+    > int matrix : is ​​the matrix that will have its dimensions changed
+    > int new_n_rows : is the new number of rows
+    > int new_n_columns : is the new number of columns
+*/
 Matrix reshape(Matrix matrix, int new_n_rows, int new_n_cols){
 
     if(matrix.n_rows*matrix.n_cols == new_n_rows*new_n_cols)
@@ -30,6 +43,13 @@ Matrix reshape(Matrix matrix, int new_n_rows, int new_n_cols){
     }
 }
 
+/*
+    function slice returns a “snip” of the original array.
+    > int rs : is the index of the initial line of the clipping
+    > int re : is the index of the end line of the clipping
+    > int cs : is the index of the initial column of the clipping
+    > int ce : is the index of the final column of the clipping
+*/
 Matrix slice(Matrix a_matrix, int rs, int re, int cs, int ce){
     int rows = re-rs;
     int cols = ce-cs;
