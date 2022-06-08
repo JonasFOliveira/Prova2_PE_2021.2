@@ -104,19 +104,3 @@ Matrix tile_matrix(Matrix matrix, int reps){
     Matrix out = create_matrix(data, matrix.n_rows, matrix.n_cols*reps);
     return out;
 }
-
-// 0 1 2 | 3 4 5 | 6 7 8
-// 1 2 3 | 4 5 6 | 7 8 9
-
-//   0 1 2 
-// 0 1 2 3
-// 1 4 5 6
-// 2 7 8 9
-
-//   0 1 2 3 4 5  
-// 0 1 2 3 1 2 3
-// 1 4 5 6 4 5 6
-// 2 7 8 9 7 8 9
-
-// 0 1 2 4 5 6 | 7 8 9 10 11 12 | 13 14 15 16 17 18
-// 1 2 3 1 2 3 | 4 5 6 4  5  6  | 7  8  9  7  8  9
