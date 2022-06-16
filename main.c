@@ -2,7 +2,7 @@
     Jonas Felipe da Fonseca Oliveira - 20210026948
     Samila Ellen Garrido Rodrigues   - 20210026788
 */
-#include "header.h"
+#include "matrix.h"
 #include <stdio.h>
 
 int main(){
