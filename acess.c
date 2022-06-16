@@ -1,3 +1,7 @@
+/*  
+    Jonas Felipe da Fonseca Oliveira - 20210026948
+    Samila Ellen Garrido Rodrigues   - 20210026788
+*/
 #include <stdio.h>
 #include <stdlib.h>
 #include "header.h"
@@ -53,7 +57,7 @@ void print_matrix(Matrix matrix){
             printf("},");
         else
             printf("} ");
-        if (i < matrix.n_rows)
+        if (i < matrix.n_cols)
             puts("");
     }
     printf("}\n\n");

@@ -1,3 +1,7 @@
+/*  
+    Jonas Felipe da Fonseca Oliveira - 20210026948
+    Samila Ellen Garrido Rodrigues   - 20210026788
+*/
 #include "header.h"
 #include <stdio.h>
 #include <stdlib.h>
@@ -72,41 +76,3 @@ Matrix slice(Matrix a_matrix, int rs, int re, int cs, int ce){
     
     return out;
 }
- 
-//  1 2 3 4 5 6 7 8 9
-
-//  1 2 3 
-//  4 5 6
-//  7 8 9
-
-//  1 4 7
-//  2 5 8
-//  3 6 9
-
-//  1 4 7 2 5 8 3 6 9
-
-// 1 2 3 4
-// 5 6 7 8
-
-// 1 2
-// // 3 4
-// // 5 6
-// // 7 8
-//   0 1 2
-// 0 1 2 3
-// 1 4 5 6
-// 2 7 8 9
-
-//   1 2
-// 0 2 3
-// 1 5 6
-
-// 1 2 3 4 5 6 7 8 9
-
-// 2 3 5 6
-
-
-// rs = 0
-// re = 2 - 1 = 1
-// cs = 1
-// ce = 3 - 1 = 2
